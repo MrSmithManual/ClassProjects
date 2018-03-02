@@ -1,0 +1,88 @@
+<!
+File Name       : index.html
+Project         : SampleProject3Feb142018
+Programmer      : Harold Smith
+Date            : February 12, 2018
+Purpose         : To demonstrate how to play video files using JavaScript.
+>
+
+<html>
+    <head>
+        <meta http-equiv="Content-Language" content="en-us">
+        <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+        <title>Mr. Smith's Jukebox Project</title>
+    </head>
+<body>
+    <video id="HoganVid" width="320" height="240" controls>
+    <source src="hoganbodyslam.mp4" type="video/mp4">
+    <source src="movie.ogg" type="video/ogg">
+    Your browser does not support the video tag.
+    </video>
+     <p></p>
+    <button type="button"  
+            style= "
+            font-size : 25px; 
+            height: 100px; 
+            width: 150px; 
+            font-family : Impact; 
+            color : red;
+            background-color: #00000;" 
+            onclick="hoganVideo()" 
+            id="button1" >
+            Play BodySlam Video
+    </button>
+    <p></p>
+    <video id="Agony" width="320" height="240">
+    <source src="agonyofdefeat.mp4" type="video/mp4">
+    <source src="movie.ogg" type="video/ogg">
+    Your browser does not support the video tag.
+    </video>
+      <p></p>
+     <button type="button"  
+            style= "
+            font-size : 25px; 
+            height: 100px; 
+            width: 150px; 
+            font-family : Impact; 
+            color : black;
+            background-color: #008CBA;" 
+            onclick="agonyofDefeat()" 
+            id="button1" >
+            Play Agony of Defeat
+    </button>
+    <p></p>
+
+    
+<script>
+    
+function hoganVideo()
+{
+       var video = document.getElementById("HoganVid");
+       var button = document.getElementById("play");
+       if (video.paused) {
+          video.play();
+          button.textContent = "||";
+       } else {
+          video.pause();
+          button.textContent = ">";
+       }
+}
+
+function agonyofDefeat()
+{
+       var video = document.getElementById("Agony");
+       var button = document.getElementById("play");
+       if (video.paused) {
+          video.play();
+          button.textContent = "||";
+       } else {
+          video.pause();
+          button.textContent = ">";
+       }    
+}
+
+
+</script>
+
+</body>
+</html>

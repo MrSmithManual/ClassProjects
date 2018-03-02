@@ -1,0 +1,57 @@
+<!
+File Name       : index.html
+Project         : SampleProject2Feb122018
+Programmer      : Harold Smith
+Date            : February 12, 2018
+Purpose         : To demonstrate how to play audio files in a webpage using Javascript
+                : This one uses buttons instead of radio
+>
+
+<html>
+    <head>
+        <meta http-equiv="Content-Language" content="en-us">
+        <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+        <title>Mr. Smith's Jukebox Project</title>
+    </head>
+<body>
+    <button type="button"  style= "font-size : 55px; height: 200px; width: 300px; font-family : Impact; color : red;background-color: #008CBA;" onclick="aquaBoogie()" id="button1" >Aqua Boogie - Parliament</button>
+    <button type="button" onclick="popcornMan()" id="button2" >Popcorn Man - Otis Spann</button>
+    
+<audio id="AquaBoogie">
+    <source src="aquaboogie.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+                             
+<audio id="PopcornMan">
+    <source src="popcornman.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+                    
+<button onclick="pauseAudio()" type="button">Pause Audio</button> 
+
+<script>
+    
+function aquaBoogie()
+{
+    document.body.style.backgroundImage = "url('aquaboogie.jpg')";
+    x = document.getElementById("AquaBoogie"); 
+    x.play();    
+}
+
+function popcornMan()
+{
+    document.body.style.backgroundImage = "url('spann1.jpg')";
+    x = document.getElementById("PopcornMan"); 
+    x.play();    
+}
+
+    
+function pauseAudio() 
+    {   x.pause();
+        document.body.style.backgroundColor = "red"; 
+    } 
+
+</script>
+
+</body>
+</html>

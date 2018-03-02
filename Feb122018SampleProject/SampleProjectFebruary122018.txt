@@ -1,0 +1,124 @@
+<!
+File Name       : index.html
+Project         : SampleProjectFeb122018
+Programmer      : Harold Smith
+Date            : February 12, 2018
+Purpose         : To demonstrate how to play audio files in a webpage using Javascript
+>
+
+<html>
+    <head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Mr. Smith's Jukebox Project</title>
+</head>
+<body>
+
+    <div id="page-wrap">
+
+        <h1>Mr. Smith's Jukebox</h1>
+       
+        <form action="grade.php" method="post" id="quiz">
+       
+            <ol>
+           
+                <li>
+               
+                    <h3>Funk, Blues, and NeoSoulTunes</h3>
+                   
+                    <div>
+                        <input type="radio" name="songchoices" id="firstsong" value="A" />
+                        <label id="Song1A" for="firstsong" style="color: black">Aqua Boogie</label>
+                    </div>
+                   
+                    <div>
+                        <input type="radio" name="songchoices" id="secondsong" value="B" />
+                        <label id="Song1B" for="secondsong" style="color: blue">Open Your Eyes</label>
+                    </div>
+                   
+                    <div>
+                        <input type="radio" name="songchoices" id="thirdsong" value="C" />
+                        <label id="Song1C" for="thirdsong" style="color: black">Popcorn Man</label>
+                    </div>
+                   
+                    <div>
+                        <input type="radio" name="songchoices" id="fourthsong" value="D" />
+                        <label id="Song1D" for="fourthsong" style="color: blue ">Theme From the Black Hole</label>
+                    </div>
+               
+                </li>
+               
+            </ol>
+                    
+         </form>
+   
+    </div>
+
+<audio id="myAudio1">
+    <source src="aquaboogie.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+                    
+<audio id="myAudio2">
+    <source src="openyoureyes.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+                    
+<audio id="myAudio3">
+    <source src="popcornman.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+                    
+<audio id="myAudio4">
+    <source src="themeblackhole.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+<p>Click the buttons to play or pause the audio.</p>
+
+<button onclick="playAudio()" type="button">Play Audio</button>
+<button onclick="pauseAudio()" type="button">Pause Audio</button> 
+
+<script>
+
+function playAudio() 
+{   
+    
+    if (document.getElementById('firstsong').checked)
+    {  
+        document.body.style.backgroundColor = "blue";
+        x = document.getElementById("myAudio1"); 
+        x.play();
+    } 
+
+    if (document.getElementById('secondsong').checked)
+    {
+        document.body.style.backgroundColor = "purple";
+        x = document.getElementById("myAudio2"); 
+        x.play();
+    } 
+    
+    if (document.getElementById('thirdsong').checked)
+    {   
+        document.body.style.backgroundColor = "brown";
+        x = document.getElementById("myAudio3"); 
+        x.play();
+    } 
+    
+    if (document.getElementById('fourthsong').checked)
+    {   
+        document.body.style.backgroundColor = "orange";
+        x = document.getElementById("myAudio4"); 
+        x.play();
+    } 
+}
+    
+function pauseAudio() 
+    {   x.pause();
+        document.body.style.backgroundColor = "red"; 
+    } 
+
+</script>
+
+</body>
+</html>
